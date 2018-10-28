@@ -1,14 +1,6 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Main Blogs!</h1>
-
-
-    <hr />
-
-    {% if blogs|length == 0 %}
-        <p>No post yet</p>
-    {% else %}
 
     {% for blog in blogs %}
         <h1><a href="/blog?id={{blog.id}}">{{blog.title}}</a></h1>
@@ -16,11 +8,8 @@
             {{blog.body}}
         </p>
         <p>Written By.<a href="/blog?user={{blog.owner_id}}">{{blog.owner_id}}</a></p>
-        <hr />
-        {% endfor %}
-        
-    {% endif %}
-        
-  
+
+        <hr/> 
+    {% endfor %}
 
 {% endblock %}
